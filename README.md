@@ -157,6 +157,53 @@ int binarySearch(int arr[], int size, int target) {
     return -1; // Target not found 
 }
 
+
+5)MERGE SORT
+
+def mergeSort(arr):
+    if len(arr) > 1:
+
+        # Find the middle point and divide the array
+        mid = len(arr) // 2
+        start = arr[:mid]
+        end = arr[mid:]
+
+        # Sort the two halves
+        mergeSort(start)
+        mergeSort(end)
+
+        i = j = k = 0
+
+        # Merge the sorted halves
+        while i < len(start) and j < len(end):
+            if start[i] < end[j]:
+                arr[k] = start[i]
+                i += 1
+            else:
+                arr[k] = end[j]
+                j += 1
+            k += 1
+
+        # Copy any remaining elements
+        while i < len(start):
+            arr[k] = start[i]
+            i += 1
+            k += 1
+
+        while j < len(end):
+            arr[k] = end[j]
+            j += 1
+            k += 1
+
+# Driver code
+if __name__ == '__main__':
+    arr = [6, 5, 4, 8, 1, 9]
+    print("Original Delivery Times:", arr)
+    mergeSort(arr)
+    print("Sorted by Delivery Time (Ascending):", arr)
+
+
+
 int main() {
     int sortedArray[] = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91};    
     int size = sizeof(sortedArray) / sizeof(sortedArray[0]);	      
