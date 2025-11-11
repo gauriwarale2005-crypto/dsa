@@ -157,6 +157,23 @@ int binarySearch(int arr[], int size, int target) {
     return -1; // Target not found 
 }
 
+int main() {
+    int sortedArray[] = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91};    
+    int size = sizeof(sortedArray) / sizeof(sortedArray[0]);	      
+    int targetElement = 23;    
+
+    int result = binarySearch(sortedArray, size, targetElement);
+
+    if (result != -1) {
+        cout << "Element " << targetElement << " found at index: " << result << endl;
+    } 
+    else {
+        cout << "Element " << targetElement << " not found in the array." << endl;
+    }
+
+    return 0;
+}
+
 
 5)MERGE SORT
 
